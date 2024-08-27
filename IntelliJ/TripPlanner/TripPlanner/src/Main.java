@@ -101,10 +101,11 @@ public class Main {
 
             if (tripToEdit == null) {
                 System.out.println("No trip found with ID: " + id);
+                menu(scan, trips);
                 return;
             }
 
-            System.out.println("Editing trip: " + tripToEdit);
+            System.out.println("Editing trip:\n " + tripToEdit);
             System.out.println("Enter the new country (or press ENTER to keep \"" + tripToEdit.getCountry() + "\"):");
             String newCountry = scan.nextLine();
             if (!newCountry.isEmpty()) {
@@ -118,18 +119,18 @@ public class Main {
                 tripToEdit.setDuration(newDuration);
             }
 
-            System.out.println("Enter the new price (or press ENTER to keep \"" + tripToEdit.getKilometers() + "\"):");
+            System.out.println("Enter the new price (or press ENTER to keep \"" + tripToEdit.getPrice() + "\"):");
             String priceInput = scan.nextLine();
             if (!priceInput.isEmpty()) {
                 int newPrice = Integer.parseInt(priceInput);
-                tripToEdit.setDuration(newPrice);
+                tripToEdit.setPrice(newPrice);
             }
 
             System.out.println("Enter the new kilometers (or press ENTER to keep \"" + tripToEdit.getKilometers() + "\"):");
             String kilometersInput = scan.nextLine();
             if (!kilometersInput.isEmpty()) {
                 int newKilometers = Integer.parseInt(kilometersInput);
-                tripToEdit.setDuration(newKilometers);
+                tripToEdit.setKilometers(newKilometers);
             }
 
             System.out.println("Trip updated succesfully!");
